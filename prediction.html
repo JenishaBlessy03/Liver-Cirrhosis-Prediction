@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Cirrhosis Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body style="background: url('/static/img.jpg') no-repeat center center fixed; background-size: cover;">
+
+    <div class="container">
+        <h1>Liver Cirrhosis Prediction</h1>
+
+        <form id="prediction-form" onsubmit="submitForm(); return false;">
+
+            <label>Patient Name:</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+
+            <label>Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label>Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
+
+            <label>Total Bilirubin:</label>
+            <input type="number" id="total_bilirubin" name="total_bilirubin" step="0.01" required>
+
+            <label>Alkaline Phosphatase:</label>
+            <input type="number" id="alk_phos" name="alk_phos" step="0.01" required>
+
+            <label>Albumin:</label>
+            <input type="number" id="albumin" name="albumin" step="0.01" required>
+
+            <label>Prothrombin:</label>
+            <input type="number" id="prothrombin" name="prothrombin" step="0.01" required>
+
+            <label>Platelets:</label>
+            <input type="number" id="platelets" name="platelets" required>
+
+            <label>SGOT:</label>
+            <input type="number" id="sgot" name="sgot" step="0.01" required>
+
+            <label>Cholesterol:</label>
+            <input type="number" id="cholesterol" name="cholesterol" step="0.01" required>
+
+            <label>Triglycerides:</label>
+            <input type="number" id="triglycerides" name="triglycerides" step="0.01" required>
+
+            <label>Copper:</label>
+            <input type="number" id="copper" name="copper" step="0.01" required>
+
+            <label>Ascites:</label>
+            <select id="ascites" name="ascites" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Hepatomegaly:</label>
+            <select id="hepatomegaly" name="hepatomegaly" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Spiders:</label>
+            <select id="spiders" name="spiders" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Edema:</label>
+            <select id="edema" name="edema" required>
+                <option value="">Select</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <button type="button" onclick="submitForm()">Predict</button>
+        </form>
+
+        <div id="result"></div>
+
+        <button id="download-pdf" style="display: none;" onclick="downloadPDF()">Download Report</button>
+
+        <script src="/static/js/script.js"></script>
+    </div>
+</body>
+</html>

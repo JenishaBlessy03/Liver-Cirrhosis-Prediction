@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEPACHECK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Image */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("{{ url_for('static', filename='bg.jpg') }}") center/cover no-repeat;
+            filter: brightness(40%);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        /* Get Started Button */
+        .btn-container {
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.5em;
+            color: white;
+            background-color: #155e53;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>HEPACHECK</h1>
+
+    <p>
+        Liver cirrhosis is a condition where the liver becomes severely scarred over time due to long-term damage.
+        This can affect your liver's ability to function properly. Early detection can help in managing the condition,
+        improving the quality of life, and preventing further complications.
+    </p><br>
+
+    <div class="btn-container">
+        <a href="{{ url_for('prediction') }}">
+            <button class="btn">Get Started</button>
+        </a>
+    </div>
+
+</body>
+</html>
+
+
